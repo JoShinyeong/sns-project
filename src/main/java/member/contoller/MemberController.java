@@ -39,5 +39,12 @@ public class MemberController {
 			return "redirect:/board/list";
 		}
 	}
+	@RequestMapping(value = "/member/signup", method = RequestMethod.GET)
+	public String signUp1(Model model, HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		MemberVO memberVO = (MemberVO) session.getAttribute("member");
+		
+		return "/member/signup";
+	}
 
 }
