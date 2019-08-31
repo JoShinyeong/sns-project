@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
@@ -104,6 +105,15 @@ public class MemberController {
 			System.out.println("비번찾기 실패");
 			return "/member/signup";
 		}
+	}
+	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
+	public String logout(Model model, HttpServletRequest req, HttpServletResponse resp) throws Exception {
+
+		HttpSession session = req.getSession();
+		session.invalidate();
+		System.out.println("해제완료!");
+
+		return "/member/main";
 	}
 	
 	
