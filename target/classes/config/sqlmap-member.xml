@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberDAO">
+	<select id="memberlist" resultType="memberVO">
+		SELECT * FROM MEMBER
+		ORDER BY email
+	</select>
+	<select resultType="memberVO" id="memberLogin" parameterType="map">
+	SELECT * FROM MEMBER WHERE email=#{email} and password=#{password}
+	</select>
+	<insert id="memberInsert" parameterType="meberVO">
+	INSERT INTO MEMBER(NAME, EMAIL, PASSWORD, regdate, PROFILE) VALUES(#{name}, #{email},
+	#{password}, SYSDATE)
+	</insert>
+	<update id="meberUpdate" parameterType="memberVO">
+	UPDATE MEMBER SET name=#{name}, password=#{password} where email=#{email}
+	</update>
+	<select resultType="memberVO" id="matchPW" parameterType="map">
+	select password from member where email=#{email} and name=#{name}
+	</select>
+	<select resultType="java.lang.Integer" id="matchID" parameterType="String">
+	SELECT count(*) FROM MEMBER where email=#{email}
+	</select>
+		
+</mapper>
+
+
+
