@@ -53,12 +53,12 @@
 	<bean id="memberDao" class="member.dao.MemberDaoMybatis">
 		<constructor-arg ref="sqlSessionTemplate" />
 	</bean>
-	<bean id="memberService" class="member.service.MemberServiceImpl">
-		<property name="bookDao" ref="bookDao" />
-	</bean>
+	<!-- <bean id="memberService" class="member.service.MemberServiceImpl">
+		<property name="memberDao" ref="memberDao" />
+	</bean> -->
 
 	<bean id="memberServiceImpl" class="member.service.memberServiceImpl">
-		<property name="bookDao" ref="bookDao" />
+		<property name="memberDao" ref="memberDao" />
 	</bean>
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
       <property name="maxUploadSize" value="100000000"/>
