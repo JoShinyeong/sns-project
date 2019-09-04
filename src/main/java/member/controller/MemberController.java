@@ -1,4 +1,4 @@
-package member.contoller;
+package member.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,16 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import member.domain.MemberVO;
 import member.service.MemberService;
-
+@Controller
+@SessionAttributes("memberVO")
 public class MemberController {
 	private MemberService memberService; 
 	// 로그인 버튼 submit시에 피드/ 메인창으로 넘겼을 시 보드 list 쿼리 실행하면서 들고 오기 위해 
@@ -26,7 +28,7 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/member/main", method = RequestMethod.GET)
 	public String main(Model model) {
-		return "/member/main";
+		return "member/main";
 	}
 	@RequestMapping(value = "/member/main", method = RequestMethod.POST)
 	public String login(Model model, HttpServletRequest req, HttpSession session)throws Exception{

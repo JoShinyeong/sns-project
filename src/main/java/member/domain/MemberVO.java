@@ -2,6 +2,9 @@ package member.domain;
 
 import java.sql.Timestamp;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("MemberVO")
 public class MemberVO {
 	private String name;
 	private String email;

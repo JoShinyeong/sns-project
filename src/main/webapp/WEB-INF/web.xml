@@ -12,6 +12,7 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
+			classpath:spring-beans.xml
 			classpath:spring-controller.xml
 			classpath:spring-mvc.xml
 			</param-value>

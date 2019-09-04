@@ -10,7 +10,7 @@
 	<select resultType="memberVO" id="memberLogin" parameterType="map">
 	SELECT * FROM MEMBER WHERE email=#{email} and password=#{password}
 	</select>
-	<insert id="memberInsert" parameterType="meberVO">
+	<insert id="memberInsert" parameterType="memberVO">
 	INSERT INTO MEMBER(NAME, EMAIL, PASSWORD, regdate, PROFILE) VALUES(#{name}, #{email},
 	#{password}, SYSDATE)
 	</insert>
