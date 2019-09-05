@@ -7,12 +7,18 @@
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<mvc:annotation-driven />
 
+	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />
+
+
+	<mvc:resources mapping="/resources/**"
+		location="/resources/" />
+
+
+
 
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/view/" />
 	</mvc:view-resolvers>
-
 </beans>
