@@ -35,32 +35,7 @@
         <div class="background__02"></div>
         <div class="background__03"></div>
     </div>
-    <div class="contents">
-        <p class="contents__name">Kim, Chul Su</p>
-        <p class="contents__job">I'm Web programmar & Web Designer</p>
-        <div class="contents__sns">
-            <ul class="contents__list">
-                <li>
-                    <a href="http://facebook.com" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li><a href="http://www.instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://twitter.com" target="_blank">
-                       <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-blogger"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+
+ 
 </body>
 </html>
