@@ -35,7 +35,14 @@
         <div class="background__02"></div>
         <div class="background__03"></div>
     </div>
-
+<form class="form form--login framed">
+    <input type="email" placeholder="Email" class="input input--top" />
+    <input type="password" placeholder="Password" class="input" />
+    <input type="submit" value="Log in" class="input input--submit" />
+    
+    <label for="toggle--signup" class="text text--small text--centered">New? <b>Sign up</b></label>
+  </form>
+  
  
 </body>
 </html>
