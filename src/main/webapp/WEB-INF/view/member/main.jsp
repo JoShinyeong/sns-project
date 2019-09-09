@@ -36,11 +36,12 @@
         <div class="background__03"></div>
     </div>
 <form class="form form--login framed">
-    <input type="email" placeholder="Email" class="input input--top" />
-    <input type="password" placeholder="Password" class="input" />
-    <input type="submit" value="Log in" class="input input--submit" />
+    <input type="email" placeholder="Email" id="email" name="email" class="input input--top" />
+    <input type="password" placeholder="Password" id="password" name="password"  class="input" />
+    <input type="submit" value="Log in" class="input input--submit" onclick= "location.href=
+    <c:url value='/board/list/${member.email}'/>">
     
-    <label for="toggle--signup" class="text text--small text--centered">New? <b>Sign up</b></label>
+    <a class="text text--small text--centered"  href =<c:url value="/member/signup"/>>New? <b>Sign up</b></a>
   </form>
   
  
