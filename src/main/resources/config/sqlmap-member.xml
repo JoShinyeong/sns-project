@@ -11,7 +11,7 @@
 	SELECT * FROM MEMBER WHERE email=#{email} and password=#{password}
 	</select>
 	<insert id="memberInsert" parameterType="memberVO">
-	INSERT INTO MEMBER(NAME, EMAIL, PASSWORD, regdate, PROFILE) VALUES(#{name}, #{email},
+	INSERT INTO MEMBER(NAME, EMAIL, PASSWORD, regdate) VALUES(#{name}, #{email},
 	#{password}, SYSDATE)
 	</insert>
 	<update id="meberUpdate" parameterType="memberVO">

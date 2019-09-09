@@ -28,7 +28,6 @@
 
 </head>
 <body>
-<body>
     <div class="overlay"></div>
     <div class="slider">
         <div class="background__01"></div>
