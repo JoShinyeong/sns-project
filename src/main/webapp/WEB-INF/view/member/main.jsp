@@ -28,6 +28,7 @@
 
 </head>
 <body>
+<%@include file="header.jsp" %> 
     <div class="overlay"></div>
     <div class="slider">
         <div class="background__01"></div>
