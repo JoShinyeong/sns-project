@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>main</title>
 
 
@@ -28,22 +28,27 @@
 
 </head>
 <body>
-<%@include file="header.jsp" %> 
+<%-- <%@include file="header.jsp" %>    --%>
     <div class="overlay"></div>
     <div class="slider">
         <div class="background__01"></div>
         <div class="background__02"></div>
         <div class="background__03"></div>
     </div>
-<form class="form form--login framed">
+     <c:if test="${empty member}"> 
+    <form action="<c:url value='/member/main/'/>" method="POST" >
+<div class="form form--login framed">
     <input type="email" placeholder="Email" id="email" name="email" class="input input--top" />
     <input type="password" placeholder="Password" id="password" name="password"  class="input" />
     <input type="submit" value="Log in" class="input input--submit" onclick= "location.href=
     <c:url value='/board/list/${member.email}'/>">
     
     <a class="text text--small text--centered"  href =<c:url value="/member/signup"/>>New? <b>Sign up</b></a>
+
+  </div>
   </form>
-  
- 
+</c:if> 
+<%--  <%@include file="footer.jsp" %> --%>
 </body>
+
 </html>

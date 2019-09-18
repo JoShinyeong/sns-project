@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Time Line</title>
-</head>
-<body>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>목록</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -78,7 +79,6 @@ butt{
 <body>
 <div class="jumbotron text-center" style="margin-bottom:0; padding: 10px 10px 10px 10px">
   <h1></h1>
-  <p></p>
   <p><%-- 경로 값 :${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/ --%></p> 
 </div>
 
@@ -92,14 +92,15 @@ butt{
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">    
       <li class="nav-item">
+        <a class="nav-link" href="<c:url value="/board/write"/>">글쓰기</a>
       </li>    
     </ul>
   </div>&nbsp;&nbsp;&nbsp;
     <a href="<c:url value="/requestList"/>"><i class="far fa-bell" style ="font-size:25px"></i></a>&nbsp;&nbsp;
- <form class="form-inline">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search" name ="search">
+  <form class="form-inline" action="<c:url value='/board/list'/>" method = "post">
+    <input class=	 type="text" placeholder="Search" name ="search">
     <button class="btn btn-success" type="submit">search User</button>
-</form>
+  </form>
  <!--  <i class="fas fa-bars" style= "float:right; font-size: 30px"> -->
   <div class="w3-container">   
   <div class="w3-dropdown-click">
@@ -112,7 +113,7 @@ butt{
       </c:if><!-- <a href="#" class="w3-bar-item w3-button">Link 3</a> -->
        <c:if test="${not empty member.email}">
       <a href="<c:url value='/member/logout'/>" class="w3-bar-item w3-button">로그아웃</a>
-      <a href="<c:url value='/member/editProfile/{email}'/>" class="w3-bar-item w3-button">내정보</a>
+      <a href="<c:url value='/member/editProfile'/>" class="w3-bar-item w3-button">내정보</a>
       
       </c:if>
     </div>
@@ -129,5 +130,6 @@ butt{
 	  }
 	}
 </script>
+
 </body>
 </html>
