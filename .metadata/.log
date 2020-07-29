@@ -1,0 +1,13 @@
+!SESSION 2020-07-29 16:11:42.994 -----------------------------------------------
+eclipse.buildId=4.11.0.I20190307-0500
+java.version=1.8.0_201
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.core 1 0 2020-07-29 16:13:17.469
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface.text 2 0 2020-07-29 16:14:40.032
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'

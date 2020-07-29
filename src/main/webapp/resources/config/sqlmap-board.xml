@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boardDao">
+	<select id="list" resultType="boardVO">
+		SELECT * FROM SNSBOARD
+		ORDER BY regDate desc
+	</select>
+	<select id="search" parameterType="map" resultType="boardVO">
+	 	SELECT * FROM SNSBOARD
+			WHERE WRITER LIKE '%'||#{Search}||'%' 
+	
+	</select>
+
+	<select id="select" parameterType="int" resultType="boardVO">
+		SELECT * FROM
+		SNSBOARD WHERE num = #{num}
+	</select>
+	<select id="selectProfile" parameterType="String" resultType="memberVO">
+		SELECT * FROM
+		SNSMEMBER WHERE email = #{email}
+	</select>
+	<insert id="insert" parameterType="boardVO">
+			INSERT INTO SNSBOARD
+			(num, title, password, writer, email, content, regdate, images)
+			VALUES
+			(SNSBOARD_num.nextval,
+					#{title},#{password}, #{writer}, #{email}, #{content}, SYSDATE, #{images})
+	</insert>
+	<select id="memberSearch"  parameterType="String" resultType="memberVO">
+			SELECT * FROM SNSMEMBER
+			WHERE email LIKE '%'||#{Search}||'%'
+	</select> 
+	
+	<update id="update" parameterType="boardVO">
+			UPDATE SNSBOARD  SET 
+			title = #{title},
+			content = #{content},
+			images = #{images}
+			WHERE email = #{email} and num = #{num}
+	</update>
+	<update id="updateProfile" parameterType="memberVO">
+				UPDATE SNSMEMBER  SET 
+				profile = #{profile}
+				WHERE email = #{email}
+	</update>
+
+	<delete id="delete" parameterType="boardVO">
+			DELETE FROM SNSBOARD WHERE num = #{num}
+			AND email = #{email}
+	</delete>
+	
+	<select id="friendId" parameterType="String" resultType="java.lang.String">
+		select email2 from snsfriend where email1= #{email} and relationship='friend'
+	</select>
+	
+	<select id="replyList" resultType="replyVO">
+		select * from snsreply
+		order by regdate asc
+	</select>
+</mapper>
